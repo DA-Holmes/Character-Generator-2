@@ -6,7 +6,7 @@ direct = os.getcwd()
 
 class MiscBuilder:
     def __init__(self):
-        file1 = open(direct + "\\Program Tools\\Program Data\\Misc_Data.txt", 'r')
+        file1 = open(direct + "\\Subprograms\\Program Data\\Misc_Data.txt", 'r')
 
         all_data = []
         for line in file1:
@@ -23,11 +23,11 @@ class MiscBuilder:
         self.gaming_sets        = all_data[6][1].split(',')
 #         print(self.lang_standard)
 #         print(self.lang_exotic)
-        
-        
-        
 
-    
+
+
+
+
 #     def set_tools(self, r_tools, sr_tools, c_tools, bg_tools):
 #         self.tools = []
 #         self.tool_options = []
@@ -43,8 +43,8 @@ class MiscBuilder:
 #         for tool in bg_tools:
 #             if tool != 'NA':# and tool not in self.tools:
 #                 self.tools.append(tool)
-#         
-#         
+#
+#
 #         for tool in self.tools:
 #             if tool.find("/"):
 #                 self.tools.remove(tool)
@@ -53,7 +53,3 @@ class MiscBuilder:
 # #             if tool == "One Type of Gaming Set":
 # #                 self.tools.remove(tool)
 # #                 self.tool_options.append(tool)
-
-
-
-

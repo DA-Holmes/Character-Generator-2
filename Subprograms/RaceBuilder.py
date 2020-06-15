@@ -7,12 +7,12 @@ import os
 direct = os.getcwd()
 
 class RaceBuilder:
-    
+
     def __init__(self):
-        file1 = open(direct + "\\Program Tools\\Program Data\\Race_Descriptions.txt", 'r')
-        file2 = open(direct + "\\Program Tools\\Program Data\\Race_Main_Data.txt", 'r')
-        file3 = open(direct + "\\Program Tools\\Program Data\\Race_Subs_Data.txt", 'r')
-        
+        file1 = open(direct + "\\Subprograms\\Program Data\\Race_Descriptions.txt", 'r')
+        file2 = open(direct + "\\Subprograms\\Program Data\\Race_Main_Data.txt", 'r')
+        file3 = open(direct + "\\Subprograms\\Program Data\\Race_Subs_Data.txt", 'r')
+
         self.race_list = []
         self.desc_list = []
         for line in file1:
@@ -30,13 +30,13 @@ class RaceBuilder:
         for line in file3:
             self.sub_data.append(line.strip().split(';'))
         self.sub_data.remove(self.sub_data[0])
-  
+
 
     def auto_choose(self):
         self.race = random.choice(self.race_list)
         self.set_data(self.race)
 #         self.race_str = self.race
-        
+
         self.get_sub_list(self.race)
         if self.subrace != 'NA':
             self.subrace = random.choice(self.sub_list)
@@ -45,10 +45,10 @@ class RaceBuilder:
 #             print(self.subrace + ' ' + self.race)
 #         else:
 #             print(self.race)
-        
-                      
-        
-    
+
+
+
+
     def get_sub_list(self, race):
         for i in range(len(self.main_data)):
             if race == self.main_data[i][0]:
@@ -62,8 +62,8 @@ class RaceBuilder:
                             self.sub_list.append(name_split[1])
                 else:
                     self.subrace = 'NA'
-        
-        
+
+
 
     # don't have subrace data yet
     def set_data(self, race):
@@ -73,7 +73,7 @@ class RaceBuilder:
         for entry in self.main_data:
             if race == entry[0]:
                 main_info = entry
-        
+
         self.boosts    = main_info[2].split(',')
         age            = main_info[3].split(',')
         self.age_min   = age[0]
@@ -92,8 +92,8 @@ class RaceBuilder:
         self.armor     = main_info[10].split(',')
         self.weapons   = main_info[11].split(',')
         self.traits    = main_info[12].split('&')
-        
-        
+
+
     def set_sub_data(self, subrace):
         self.subrace = subrace
         self.race_str = self.subrace + ' ' + self.race
@@ -101,7 +101,7 @@ class RaceBuilder:
             sub = entry[0].split(',')
             if subrace == sub[1]:
                 sub_info = entry
-        
+
         self.s_boosts    = sub_info[1]
         self.s_speed     = sub_info[2]
         self.s_tools     = sub_info[3].split(',')
@@ -109,7 +109,7 @@ class RaceBuilder:
         self.s_armor     = sub_info[5].split(',')
         self.s_weapons   = sub_info[6].split(',')
         self.s_traits    = sub_info[7].split('&')
-            
+
     # for use in the shell
     def check_main_info(self):
         print("Race: ", self.race)
@@ -133,7 +133,7 @@ class RaceBuilder:
         print(self.weapons)
         print("Traits: ", end='')
         print(self.traits)
-        
+
     def check_sub_info(self):
         if self.subrace != 'NA':
             print("Subrace: " + self.subrace)
@@ -147,5 +147,3 @@ class RaceBuilder:
             print(self.s_weapons)
             print("Sub Traits: ", end='')
             print(self.s_traits)
-            
-        

@@ -3,7 +3,7 @@ just don't choose half-elf yet...
 '''
 
 import sys
-sys.path.insert(0, 'Program Tools/')
+sys.path.insert(0, 'Subprograms/')
 
 # import python tools
 from tkinter import *
@@ -1281,7 +1281,7 @@ Easy step by step.""")
 
     def either_func(self, k):
         self.k_complete = False
-        while self.k_complete == False:
+        # while self.k_complete == False:
 
         print(k)
         options = self.tools_either_or[k].split('/')
