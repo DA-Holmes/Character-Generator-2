@@ -1,0 +1,10 @@
+Race;Subrace?;Ability Score Increase;Age;Alignment;Size;Speed;Skills;Tools;Languages;Armor;Weapons;Traits:Trait Description&Trait2: ...
+Dwarf;Yes;CON2;50,350;LG;4/5,150,Medium;25;NA;Smith's Tools/Brewer's Supplies/Mason's Tools;Common,Dwarvish;NA;Battleaxe,Handaxe,Throwing Hammer,Warhammer;Darkvision:60 feet&Dwarven Resilience:Adv against poison&Stonecunning:Masonry Knowledge
+Elf;Yes;DEX2;100,750;C*;5/6+,NA,Medium;30;Perception;NA;Common,Elvish;NA;NA;Darkvision:60 feet&Fey Ancestry:No charmed&Trance:No sleep
+Halfling;Yes;DEX2;20,150;LG;3/3,40,Small;25;NA;NA;Common,Halfling;NA;NA;Lucky:good feat&Brave:adv on fright
+Human;No;All1;18,90;NA;5/6+,NA,Medium;30;NA;NA;Common,Any1;NA;NA;NA
+Dragonborn;No;STR2,CHA1;15,80;NA;6+/6+,250,Medium;30;NA;NA;Common,Draconic;NA;NA;Draconic Ancestry:Type O' Dragon&Breath Weapon:Poof&Damage Resistance:from type
+Gnome;Yes;INT2;40,425;*G;3/4,40,Small;25;NA;NA;Common,Gnomish;NA;NA;Darkvision:60 feet&Gnome Cunning:adv against magic
+Half-Elf;No;CHA2,Special;20,200;CG;5/6,NA,Medium;30;Any2;NA;Common,Elvish,Any1;NA;NA;Darkvision:60 feet&Fey Ancestry:adv on charm
+Half-Orc;No;STR2,CON1;14,75;CN;5/6+,NA,Medium;30;Intimidation;NA;Common,Orc;NA;NA;Darkvision:60 feet&Relentless Endurance:can't die&Savage Attacks:crit bonus
+Tiefling;No;INT1,CHA2;18,110;CN;5/6,NA,Medium;30;NA;NA;Common,Infernal;NA;NA;Darkvision:60 feet&Infernal Legacy:magics

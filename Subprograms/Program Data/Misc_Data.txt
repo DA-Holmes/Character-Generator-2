@@ -1,0 +1,7 @@
+Languages (Standard):Common,Dwarvish,Elvish,Giant,Gnomish,Goblin,Halfling,Orc
+Languages (Exotic):Abyssal,Celestial,Draconic,Deep Speech,Infernal,Primordial,Sylvan,Undercommon
+Skills:Athletics,Acrobatics,Sleight of Hand,Stealth,Arcana,History,Investigation,Nature,Religion,Animal Handling,Insight,Medicine,Perception,Survival,Deception,Intimidation,Performance,Persuasion
+Simple Weapons:Melee;Club.1d4 bludgeoning.Light;Dagger.1d4 piercing.Finesse, light, thrown (range 20/60);Ranged
+Artisan's Tools:Alchemist's Supplies,Brewer's Supplies,Calligrapher's Supplies,Carpenter's Tools,Cartographer's Tools,Cobbler's Tools,Cook's Utensils,Glassblower's Tools,Jeweler's Tools,Leatherworker's Tools,Mason's Tools,Painter's Supplies,Potter's Tools,Smith's Tools,Tinker's Tools,Weaver's Tools,Woodcarver's Tools
+Instruments:Bagpipes,Drum,Dulcimer,Flute,Lute,Lyre,Horn,Pan Flute,Shawm,Viol
+Gaming Set:Dice Set,Dragonchess Set,Playing Card Set, Three-Dragon Ante Set
