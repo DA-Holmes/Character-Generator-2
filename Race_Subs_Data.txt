@@ -1,0 +1,10 @@
+Subrace;ASI;Speed;Tools;Languages;Armor;Weapons;Traits:Trait Description&Trait2: ...
+Dwarf,Hill;WIS1;NA;NA;NA;NA;NA;Dwarven Toughness:hp boost
+Dwarf,Mountain;STR2;NA;NA;NA;Light,Medium;NA;NA
+Elf,High;INT1;NA;NA;Any1;NA;Longbow,Shortsword,Shortbow,Longbow;Cantrip: 1 from wizard list
+Elf,Wood;WIS1;35;NA;NA;NA;Longbow,Shortsword,Shortbow,Longbow;Mask of the Wild:hiding boost
+Elf,Dark;CHA1;NA;NA;NA;NA;Rapiers,Shortswords,Hand Crossbows;Superior Darkvision:120 feet&Sunlight Sensitivity:ouchy&Drow Magic:fun
+Halfling,Lightfoot;CHA1;NA;NA;NA;NA;NA;Naturally Stealthy:hiding anywhere
+Halfling,Stout;CON1;NA;NA;NA;NA;NA;Stout Resilience: adv on poison
+Gnome,Forest;DEX1;NA;NA;NA;NA;NA;Natural Illusionist:minor illusion&Speak with Small Beasts:friends
+Gnome,Rock;CON1;NA;Tinker's Tools;NA;NA;NA;Artificer's Lore:boost to magic checks&Tinker:toys
