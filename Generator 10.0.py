@@ -1,5 +1,5 @@
 '''
-NOW in new branch
+resolved conflict in github
 
 just don't choose half-elf yet...
 '''
