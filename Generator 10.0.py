@@ -1,4 +1,6 @@
 '''
+NEW BRANCH started 12/8/2020
+
 Committing this comment after starting the new branch 'Holmes December'
 
 just don't choose half-elf yet...
