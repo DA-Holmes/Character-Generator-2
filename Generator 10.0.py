@@ -1,5 +1,5 @@
 '''
-Deleted other comments and now using atom
+resolved conflict in github
 
 just don't choose half-elf yet...
 '''
