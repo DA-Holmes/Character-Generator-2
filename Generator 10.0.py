@@ -1,17 +1,28 @@
 '''
-resolved conflict in github
-
-just don't choose half-elf yet...
+Half-Elf still problematic
 '''
 
+'''
+IDEAS:
+* simplify main class
+    * create new 'super builder' class that reads all of the other builders and makes it into one class that can run all of the different methods
+    * within this super builder, set up the functions that are currently being created for each page
+    * THEN, the main class should be able to simply direct to different pages that will run "independently"
+'''
+
+
+# set the system path for importing modules
 import sys
 sys.path.insert(0, 'Subprograms/')
 
 # import python tools
 from tkinter import *
+# from PIL import ImageTk,Image
+import ctypes
+
+# from hdpitkinter import HdpiTk
 from functools import partial
 import random
-
 
 # import my modules
 from RaceBuilder import *
@@ -25,13 +36,13 @@ bb = BackgroundBuilder()
 sb = StatBuilder()
 mb = MiscBuilder()
 
-
+# main class
 class Main(Frame):
 
     # initialize the window
     def __init__(self, master):
         Frame.__init__(self, master)
-        master.title("D&D Character Generator")
+        master.title("5e Pocket Gen")
         self.master = master
 
         self.menu()
@@ -41,6 +52,7 @@ class Main(Frame):
         for widget in self.master.winfo_children():
             widget.destroy()
 
+    # sets temporary character data for testing
     def temp_ch_set(self):
         if self.ch_set == False:
 #             rb.auto_choose()
@@ -58,10 +70,9 @@ class Main(Frame):
     # presents the menu page that allows access to other pages
     def menu(self):
         self.clear()
-
         self.ch_set = False
 
-        #can probably simplify to just one 'empty' variable
+        #can probably simplify to just one 'empty' variable #
         self.r_cont_empty = True
         self.c_cont_empty = True
         self.b_cont_empty = True
@@ -70,24 +81,31 @@ class Main(Frame):
         self.OPTIONS = [1,2,3,4,5,6]
 
         self.master.geometry("560x340")
-#         self.master.resizable(0,0)
+        # self.master.resizable(0,0)
 
         # using frames to better manipulate the visualization
         title_frame = Frame(self.master)
         btn_frame = Frame(self.master)
+        img_frame = Frame(self.master)
 
-        self.menu_title = Label(title_frame, text="The D&D Character Generator", font=("Times New Roman", 25))
-        self.menu_title.pack(padx=10)
-        Button(btn_frame, text="Manual Generator", width=20, command = self.race_page).pack(pady=5)
-        Button(btn_frame, text="Automatic Generator", width=20, command = self.auto_page).pack(pady=5)
-        Button(btn_frame, text="Dice Roller", width=20, command = self.roll_page).pack(pady=5)
-        Button(btn_frame, text="Instructions", width=20, command = self.inst_page).pack(pady=5)
-        Button(btn_frame, text="Other Choices Shortcut", width=20, command = self.additional_choices).pack(pady=5)
+        # menu title
+        Label(title_frame, text="The D&D 5e Pocket Generator", font=("Times New Roman", 32)).pack(padx=10)
+
+        # menu buttons
+        Button(btn_frame, text="Manual Generator", font=("Times New Roman", 15), width=17, command = self.race_page).pack(pady=5)
+        Button(btn_frame, text="Automatic Generator", font=("Times New Roman", 15), width=17, command = self.auto_page).pack(pady=5)
+        Button(btn_frame, text="Dice Roller", font=("Times New Roman", 15), width=17, command = self.roll_page).pack(pady=5)
+        Button(btn_frame, text="Instructions", font=("Times New Roman", 15), width=17, command = self.inst_page).pack(pady=5)
+        Button(btn_frame, text="Other Choices Shortcut", font=("Times New Roman", 15), width=17, command = self.additional_choices).pack(pady=5)
 #         Button(btn_frame, text="THIS PAGE", width=20, command = self.stat_init).pack(pady=5)
 
+        # image
+        # img_Symbol = ImageTk.PhotoImage(Image.open("AndSign.png"))
 
-        title_frame.pack(fill=BOTH)
-        btn_frame.pack(fill=BOTH)
+        # title_frame.pack(fill=BOTH)
+        # btn_frame.pack(fill=BOTH)
+        title_frame.grid(column=0,row=0)
+        btn_frame.grid(column=0,row=1)
 
     # an instrucional page on how to use the program (currently just a placeholder)
     def inst_page(self):
@@ -1085,9 +1103,9 @@ Easy step by step.""")
     def choose_skill(self, n):
         self.skl_choices_rem -= 1
         self.skill_profs.append(self.skl_btn_ids[n]['text'])
-#         print("Skill added:", self.skl_btn_ids[n]['text'])
-#         print(self.skill_profs)
-#         print("Can choose", self.skl_choices_rem, "more")
+        # print("Skill added:", self.skl_btn_ids[n]['text'])
+        # print(self.skill_profs)
+        # print("Can choose", self.skl_choices_rem, "more")
 
         self.skl_btn_ids[n].config(relief=SUNKEN, command=partial(self.unchoose_skill, n))
 
@@ -1097,18 +1115,18 @@ Easy step by step.""")
     def unchoose_skill(self, m):
         self.skl_choices_rem += 1
         self.skill_profs.remove(self.skl_btn_ids[m]['text'])
-#         print("Skill removed:", self.skl_btn_ids[m]['text'])
-#         print(self.skill_profs)
-#         print("Can choose", self.skl_choices_rem, "more")
+        # print("Skill removed:", self.skl_btn_ids[m]['text'])
+        # print(self.skill_profs)
+        # print("Can choose", self.skl_choices_rem, "more")
 
         self.skl_btn_ids[m].config(relief=RAISED, command=partial(self.choose_skill, m))
 
         if self.skl_confirm_empty == False:
-#             self.skl_confirm_frm.destroy()
+            # self.skl_confirm_frm.destroy()
 
             for k in range(len(self.skl_btn_ids)):
                 if self.skl_btn_ids[k]['text'] not in self.skill_profs:
-#                     print(self.skl_btn_ids[k]['text'])
+                    # print(self.skl_btn_ids[k]['text'])
                     self.skl_btn_ids[k].config(state='normal')
 
     def confirm_skills_prompt(self):
@@ -1151,11 +1169,11 @@ Easy step by step.""")
         tool_title_frm.pack(anchor='w', padx=5)
 
         self.tool_frm1 = Frame(self.master)
-#         self.tool_frm1.pack(anchor='w')
+        # self.tool_frm1.pack(anchor='w')
         self.tool_frm2 = Frame(self.master)
         self.tool_frm2.pack(anchor='w')
 
-#         Label(self.tool_frm1, text="Tool Time with Tim Taylor").pack(padx=5)
+        Label(self.tool_frm1, text="Tool Time with Tim Taylor").pack(padx=5)
 
         self.tool_row_num = 0
         instrument_options = mb.instruments
@@ -1552,7 +1570,8 @@ Easy step by step.""")
 #         save2 = cb.save2
 
 
-
+#calling the program
 root = Tk()
+ctypes.windll.shcore.SetProcessDpiAwareness(1)
 test_run = Main(root)
 root.mainloop()
