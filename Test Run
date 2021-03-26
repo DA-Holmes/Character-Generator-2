@@ -1,5 +1,17 @@
 from tkinter import *
 
+from pillow import *
+
+
+
+
+
+
+
+
+
+
+
 
 # root=Tk()
 # img=PhotoImage(file='logo2.jpg')
